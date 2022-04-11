@@ -64,10 +64,17 @@ const config: Configuration = {
         test: /\.(css|scss)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              // 0 => no loaders (default);
+              // 1 => postcss-loader;
+              // 2 => postcss-loader, sass-loader
+              importLoaders: 1,
+            },
+          },
           'postcss-loader',
+          'sass-loader',
         ],
       },
       {
