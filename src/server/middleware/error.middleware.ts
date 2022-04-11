@@ -1,4 +1,4 @@
-import type { Request, Response } from 'express';
+import type { NextFunction, Request, Response } from 'express';
 
 import HttpError from '../utils/errors/HttpError';
 import ValidationError from '../utils/errors/ValidationError';
@@ -9,6 +9,7 @@ export const errorHandler: any = (
   err: HttpException,
   req: Request,
   res: Response,
+  next: NextFunction,
 ) => {
   if (err?.response) {
     const httpError = new HttpError(err);
