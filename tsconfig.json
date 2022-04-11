@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "alwaysStrict": true,
+    "declaration": false,
+    "importHelpers": false,
+    "outDir": "./dist",
+    "strictPropertyInitialization": false,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noEmitHelpers": false,
+    "noEmitOnError": false,
+    "experimentalDecorators": true,
+    "rootDir": "./",
+    "sourceMap": false,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "typeRoots": [
+      "./src/client/types",
+      "./node_modules/@types"
+    ],
+  },
+  "include": [
+    "src/client",
+    "src/client/types/*",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+  ],
+}

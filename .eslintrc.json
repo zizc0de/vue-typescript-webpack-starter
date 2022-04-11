@@ -1,0 +1,90 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:eslint-comments/recommended",
+    "plugin:vue/vue3-recommended"
+  ],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "extraFileExtensions": [
+      ".vue"
+    ]
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "overrides": [
+    {
+      // enable the rule specifically for TypeScript files
+      "files": ["*.ts", "*.vue"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": ["error"]
+      }
+    }
+  ],
+  "rules": {
+    "no-console": [
+      1,
+      {
+        "allow": [
+          "error",
+          "log",
+          "warn"
+        ]
+      }
+    ],
+    "comma-dangle": [
+      2,
+      "only-multiline"
+    ],
+    "semi": [
+      2,
+      "always"
+    ],
+    "no-extra-semi": 2,
+    "space-before-function-paren": "off",
+    "quotes": [
+      2,
+      "single",
+      "avoid-escape"
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    "class-methods-use-this": [
+      "error",
+      {
+        "exceptMethods": [
+          "beforeCreate",
+          "created",
+          "beforeMount",
+          "mounted",
+          "beforeUpdate",
+          "updated",
+          "beforeDestroy",
+          "destroyed"
+        ]
+      }
+    ],
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-var-requires": "off"
+  }
+}
